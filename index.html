@@ -55,7 +55,23 @@
         header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #e2e8f0; }
         nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); letter-spacing: -0.5px; }
+        /* 로고 스타일 수정 (이미지 포함) */
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: var(--primary-dark); 
+            letter-spacing: -0.5px;
+            display: flex;       /* 이미지와 텍스트 가로 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            gap: 10px;           /* 이미지와 텍스트 사이 간격 */
+        }
+
+        /* 로고 이미지 크기 조절 */
+        .logo img {
+            height: 45px;       /* 네비게이션 높이에 맞춰 적절히 조절 */
+            width: auto;
+            border-radius: 50%; /* 원형 로고인 경우 둥글게 처리 (선택사항) */
+        }
         
         .nav-links { display: flex; gap: 40px; }
         .nav-links a { font-weight: 600; color: var(--primary-light); font-size: 1rem; transition: color 0.3s; }
@@ -285,7 +301,11 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">시너스<span style="color:var(--accent-main)">(Synus.IT)</span></div>
+                <div class="logo">
+                    <img src="images/Synus_logo.jpg" alt="Synus IT Logo">
+                    Synus IT
+                </div>
+                
                 <div class="nav-links">
                     <a href="#diagnosis">현황진단</a>
                     <a href="#stabilization">안정화</a>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synus.IT Managed Partner Proposal</title>
+    <title>Synus IT Managed Partner Proposal</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -55,21 +55,49 @@
         }
         .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--shadow); }
 
-        /* Header & Hero */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #e2e8f0; }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        /* Header (수정됨: 고정 해제 및 투명 배경) */
+        header { 
+            position: absolute; /* fixed에서 변경하여 스크롤 시 따라오지 않음 */
+            top: 0; 
+            width: 100%; 
+            background: transparent; /* 배경 투명화 */
+            border-bottom: none; 
+            z-index: 1000; 
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 100px; }
         
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); letter-spacing: -0.5px; }
+        /* Logo (수정됨: 이미지 + 텍스트 정렬) */
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: var(--white); /* 배경이 어두우므로 흰색 텍스트 */
+            letter-spacing: -0.5px; 
+        }
+        .logo img {
+            height: 40px; /* 로고 높이 조절 */
+            border-radius: 6px; /* 부드러운 모서리 */
+            background: var(--white); /* 투명 PNG가 아닐 경우를 대비해 배경 흰색 처리 (선택사항) */
+            padding: 2px;
+        }
         
+        /* Nav Links (수정됨: 어두운 배경 위 가독성 확보) */
         .nav-links { display: flex; gap: 40px; }
-        .nav-links a { font-weight: 600; color: var(--primary-light); font-size: 1rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent-main); }
+        .nav-links a { 
+            font-weight: 600; 
+            color: rgba(255, 255, 255, 0.8); /* 흰색 텍스트 */
+            font-size: 1rem; 
+            transition: color 0.3s; 
+        }
+        .nav-links a:hover { color: var(--accent-main); opacity: 1; }
 
         /* Hero Section */
         .hero { 
             background: linear-gradient(135deg, var(--primary-dark) 0%, #1e293b 100%); 
             color: var(--white); 
-            padding: 160px 0 100px; 
+            padding: 180px 0 100px; /* 헤더 공간만큼 패딩 조정 */
             text-align: center;
         }
         .hero h1 { 
@@ -190,18 +218,6 @@
             color: var(--primary-light); font-size: 0.85rem; border-radius: 20px; font-weight: 600;
         }
 
-        /* Process Flow */
-        .process-flow { display: flex; justify-content: space-between; align-items: stretch; gap: 24px; margin-top: 20px; }
-        .process-step { 
-            flex: 1; background: var(--white); border: 1px solid #e2e8f0; padding: 32px; border-radius: 16px; text-align: center; 
-            transition: transform 0.3s;
-        }
-        .process-step:hover { transform: translateY(-5px); border-color: var(--accent-main); }
-        .process-step i { margin-bottom: 20px; display: inline-block; }
-        .process-step h4 { margin-bottom: 16px; color: var(--primary-dark); font-size: 1.25rem; word-break: keep-all; }
-        .process-step p { word-break: keep-all; font-size: 0.95rem; color: var(--text-sub); }
-        .process-arrow { display: flex; align-items: center; justify-content: center; color: var(--accent-main); font-size: 1.5rem; }
-
         /* Philosophy Table */
         #philosophy { background-color: var(--primary-dark); color: var(--white); }
         .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; }
@@ -242,10 +258,6 @@
             .roadmap-item { flex-direction: column; gap: 16px; }
             .step-number { text-align: left; width: 100%; margin-bottom: 0; }
             
-            .process-flow { flex-direction: column; gap: 0; }
-            .process-step { margin-bottom: 20px; }
-            .process-arrow { transform: rotate(90deg); margin: 10px 0 30px; }
-            
             .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td { display: block; width: 100%; }
             .comparison-table th { padding-bottom: 10px; border-bottom: none; font-size: 1.2rem; }
             .comparison-table .as-is { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
@@ -261,7 +273,10 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">시너스<span class="text-accent">(Synus.IT)</span></div>
+                <div class="logo">
+                    <img src="images/Synus_logo.jpg" alt="Synus IT Logo">
+                    Synus IT
+                </div>
                 <div class="nav-links">
                     <a href="#diagnosis">현황진단</a>
                     <a href="#stabilization">개선로드맵</a>
@@ -482,7 +497,7 @@
                 </div>
             </div>
             <div style="font-size: 0.8rem; opacity: 0.6; border-top: 1px solid #334155; padding-top: 30px; margin-top: 60px;">
-                &copy; 2024 시너스(Synus.IT). All rights reserved. <br>
+                &copy; 2024 Synus IT. All rights reserved. <br>
                 This proposal is confidential and proprietary.
             </div>
         </div>
